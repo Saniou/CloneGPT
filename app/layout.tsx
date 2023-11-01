@@ -6,6 +6,7 @@ import { SessionProvider } from '../components/SessionProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import { signOut } from 'next-auth/react'
+import ClientProvider from '@/components/ClientProvider'
 
 
 export default async function RootLayout({
@@ -29,6 +30,9 @@ export default async function RootLayout({
               <div className='bg-gray-900 max-w-xs h-screen overflow-y-auto md:min-[20rem]'>
                 <SideBar />
               </div>
+
+              <ClientProvider />
+
               <div className='flex-1 bg-gradient-to-r from-purple-800 via-gray-800 to-purple-800 animate-gradient'>
                 {children}
               </div>
